@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    width: 210px;
+    height: 100vh;
+    background-color: #533d7c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-logo {
+    width: 160px;
+    height: 110px;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #ffffff;
+}
