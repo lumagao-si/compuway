@@ -1,0 +1,60 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.title {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+    flex:1;
+}
+
+.subtitle {
+    color: white;
+    font-size: 16px;
+    margin: 0 30px 20px 0;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 1080px;
+    height: 150px;
+    background-color: #35168a;
+    gap: 10px;
+}
+.card1 {
+    min-width: 0;
+    height: 90%;
+    background-color: #13043a;
+    padding: 10px;
+    color: #ffffff;
+}
+
+.card2 {
+    min-width: 0;
+    height: 90%;
+    background-color: #e0cd23;
+    padding: 10px;
+}
+
+.card3 {
+    min-width: 0;
+    height: 90%;
+    background-color: #0e611c;
+    padding: 10px;
+}
+
+.card4 {
+    min-width: 0;
+    height: 90%;
+    background-color: #350303;
+    padding: 10px;
+}
+
+i {
+    font-size: 23px;
+}

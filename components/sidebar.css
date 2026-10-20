@@ -1,5 +1,6 @@
 .sidebar {
     width: 210px;
+    min-width: 210px;
     height: 100vh;
     background-image: url("./../src/images/img.sidebar.png");
     background-size: cover;
@@ -10,6 +11,8 @@
     align-items: center;
     gap: 60px;
     overflow-y: auto; 
+    box-sizing: border-box;
+    flex-shrink: 0; /* Impede que a sidebar encolha quando o conteúdo principal for maior */
 }
 
 .sidebar-logo {
