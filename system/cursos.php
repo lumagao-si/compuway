@@ -13,7 +13,7 @@
     <title>Cursos</title>
 </head>
 <body>
-    <?php include './system/../components/sidebar.php'; //chama a sidebar ?>
+    <?php include __DIR__ . '/../components/sidebar.php'; //chama a sidebar ?>
     <div class= "main">
         <div class="header-cursos">
             <h1 class="title">Cursos</h1>
