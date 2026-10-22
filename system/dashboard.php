@@ -13,12 +13,13 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <?php include './system/../components/sidebar.php'; //chama a sidebar ?>
+    <?php include __DIR__ . '/../components/sidebar.php'; //chama a sidebar ?>
     <div class = "main" >
         <div class = "header">
             <h1 class="title">Dashboard</h1>
             <h6 class="subtitle">Bem-vindo, Administrador!</h6>
         </div>
+        <div class ="container">
         <div class='cards'>
         <div class="card card1" style="width: 16rem; color: #ffffff; background-color: #13043a; border-color: #7120db;">
             <div class="card-body">
@@ -111,6 +112,7 @@
             </table>
         </div>
     </div>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
