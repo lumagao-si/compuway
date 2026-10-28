@@ -7,12 +7,116 @@
 .acoes{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    height: 40px;
+    align-items: center;
+    height: 50px;
     width: 1080px;
-    background-color: #221546;
+    margin-bottom: 40px;
 }
 
-.filter {
-    width: 200px;
+.busca-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 350px; 
+    height: 50px; 
+    border: 1px solid #4e4d4e;
+    border-radius: 10px;
+    overflow: hidden;
+    
+}
+
+.busca {
+    min-width: 0; 
+    height: 100%;
+    background-color: #1e1731; 
+    color: #ffffff; 
+    border-radius: 10px 0 0 10px;
+    border: none;
+    flex: 1;
+}
+
+
+.pesquisar {
+    width: 60px;
+    height: 50px;
+    background-color: #1e1731;
+    border-radius: 0 10px 10px 0;
+    border: none;
+    flex-shrink: 0; /*impede o botão de ser espremido*/
+}
+
+.busca-container .bi-search {
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+.filter1 {
+    margin-left: auto;
+    margin-right: 5px;;
+}
+
+.filter2 {
+    margin-right: 5px;
+}
+
+.filter1, .filter2 {
+    height: 50px;
+    border-radius: 10px;
+    background-color: #1e1732;
+    color: #ffffff;
+    gap: 5px;
+}
+
+.container_cursos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1030px;
+    height: 440px;
+    gap: 10px;
+    padding: 0 0 15px 0;
+}
+
+.table_cursos {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.table-dark .thead-cursos th{
+    background-color: #383541;
+}
+
+.badge-curso{
+    background-color: #351294;
+} 
+
+.badge-pacote{
+    background-color: #5c1c91;
+}
+
+.registros {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+p {
+    flex: 1;
+    margin-left: 10px;
+    color: #ffffff;
+}
+
+.pagination {
+    margin-right: 10px;
+    color: #ffffff;
+    border-color: #4e4d4e;
+    
+}
+
+.page-item .active {
+    background-color: #F58634 !important;
 }
