@@ -68,6 +68,48 @@
     gap: 5px;
 }
 
+.cadastrar-cursos {
+    flex-shrink: 0;
+}
+
+.modal-content{
+    background-color:#1e1731 !important;
+    color: #ffffff;
+}
+
+.modal-content .form-select {
+    background-color: #1f1d24;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+    color: #ffffff;
+}
+
+.modal-content input, textarea {
+    background-color: #1f1d24 !important;
+    color: #ffffff !important;
+}
+
+.modal-content .form-control::placeholder{
+    color: #ffffff;
+}
+
+.cadastrarCurso {
+    background-color: #F58634;
+    color: #000000;
+    border-color: #F58634;
+}
+
+.cadastrarCurso:hover {
+    background-color: #F58634;
+}
+
+.fechar {
+    color: #000000;
+}
+
+.modal-content .btn-close {
+    filter: invert(1); /*faz o x ficar claro*/
+}
+
 .container_cursos {
     display: flex;
     flex-direction: column;
