@@ -1,6 +1,6 @@
 <?php $pagina_atual = 'cursos.php'; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -46,7 +46,34 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <p>Modal body text goes here.</p>
+                            <div class="form-floating">
+                                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected>Selecionar</option>
+                                    <option value="1">Curso Individual</option>
+                                    <option value="2">Pacote</option>
+                                </select>
+                                <label for="floatingSelect">Tipo</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="Ex: Pacote Office">
+                                <label for="floatingInput">Nome do curso</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Ex: R$ 100,00">
+                                <label for="floatingPassword">Valor da mensalidade</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="Ex: 120h">
+                                <label for="floatingInput">Carga horária</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Ex: 12 meses">
+                                <label for="floatingPassword">Duração (meses)</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Ex: Descrição do curso">
+                                <label for="floatingPassword">Descrição (Opcional)</label>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
