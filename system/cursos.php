@@ -52,136 +52,188 @@
                                 <select class="form-select" id="selecionarTipo"
                                     aria-label="Floating label select example">
                                     <option selected>Selecionar</option>
-                                    <option value="1">Curso Individual</option>
-                                    <option value="2">Pacote</option>
+                                    <option value="curso">Curso Individual</option>
+                                    <option value="pacote">Pacote</option>
                                 </select>
                             </div>
-                            <div class="form mb-3">
-                                <label for="nomeCurso" class="form-label mb-2">Nome do curso</label>
-                                <input type="text" class="form-control" id="nomeCurso" placeholder="Ex: Pacote Office">
-                            </div>
-                            <div class="form mb-3">
-                                <label for="valorMensal" class="form-label mb-2">Valor da mensalidade</label>
-                                <input type="text" class="form-control" id="valorMensal" placeholder="Ex: R$ 100,00">
-                            </div>
-                            <div class="form mb-3">
-                                <label for="cargaHoraria" class="form-label mb-2">Carga horária</label>
-                                <input type="text" class="form-control" id="cargaHoraria" placeholder="Ex: 120h">
+                            <div id="camposCurso" hidden>
+                                <div class="form mb-3">
+                                    <label for="nomeCurso" class="form-label mb-2">Nome do curso</label>
+                                    <input type="text" class="form-control" id="nomeCurso"
+                                        placeholder="Ex: Pacote Office">
+                                </div>
 
-                            </div>
-                            <div class="form mb-3">
-                                <label for="duracao" class="form-label mb-2">Duração (meses)</label>
-                                <input type="text" class="form-control" id="duracao" placeholder="Ex: 12 meses">
+                                <div class="form mb-3">
+                                    <label for="valorMensal" class="form-label mb-2">Valor da mensalidade</label>
+                                    <input type="text" class="form-control" id="valorMensal"
+                                        placeholder="Ex: R$ 100,00">
+                                </div>
+                                <div class="form mb-3">
+                                    <label for="cargaHoraria" class="form-label mb-2">Carga horária</label>
+                                    <input type="text" class="form-control" id="cargaHoraria" placeholder="Ex: 120h">
 
-                            </div>
-                            <div class="form mb-3">
-                                <label for="descricao" class="form-label mb-2">Descrição (Opcional)</label>
-                                <textarea type="text" class="form-control" id="descricao"
-                                    placeholder="Ex: Descrição do curso">
+                                </div>
+                                <div class="form mb-3">
+                                    <label for="duracaoCurso" class="form-label mb-2">Duração (meses)</label>
+                                    <input type="text" class="form-control" id="duracaoCurso"
+                                        placeholder="Ex: 12 meses">
+
+                                </div>
+                                <div class="form mb-3">
+                                    <label for="descricao" class="form-label mb-2">Descrição (Opcional)</label>
+                                    <textarea type="text" class="form-control" id="descricao"
+                                        placeholder="Ex: Descrição do curso">
                                 </textarea>
+                                </div>
+                            </div>
+                            <div id="camposPacote" hidden>
+                                <div class="form mb-3">
+                                    <label for="nomePacote" class="form-label mb-2">Nome do pacote</label>
+                                    <input type="text" class="form-control" id="nomePacote"
+                                        placeholder="Ex: Pacote Office">
+                                </div>
+                                <div class="form mb-3">
+                                    <label for="valorPacote" class="form-label mb-2">Valor do pacote</label>
+                                    <input type="text" class="form-control" id="valorPacote"
+                                        placeholder="Ex: R$ 150,00">
+                                </div>
+                                <div class="form mb-3">
+                                    <label for="descricaoPacote" class="form-label mb-2">Descrição (opcional)</label>
+                                    <textarea class="form-control" id="descricaoPacote"
+                                        placeholder="Quais cursos estão incluídos no pacote?"></textarea>
+                                </div>
                             </div>
                         </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary fechar" data-bs-dismiss="modal">Fechar</button>
-                                <button type="button" class="btn btn-primary cadastrarCurso">Cadastrar</button>
-                            </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary fechar"
+                                data-bs-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-primary cadastrarCurso">Cadastrar</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="container_cursos">
-                <div class="table_cursos">
-                    <table class="table table-dark table-hover" style="border-radius: 10px;">
-                        <thead class="thead-cursos">
-                            <tr>
-                                <th>Nome</th>
-                                <th>Valor mensal</th>
-                                <th>Duração</th>
-                                <th>Tipo</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Informática</td>
-                                <td>R$ 100,00</td>
-                                <td>12 meses</td>
-                                <td><span class="badge theme-primary badge-curso">Curso Individual</span></td>
-                                <td><i class="bi bi-three-dots-vertical"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Técnico em Hardware</td>
-                                <td>R$ 100,00</td>
-                                <td>12 meses</td>
-                                <td><span class="badge theme-primary badge-curso">Curso Individual</span></td>
-                                <td><i class="bi bi-three-dots-vertical"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Power BI</td>
-                                <td>R$ 100,00</td>
-                                <td>--</td>
-                                <td><span class="badge theme-primary badge-pacote">Pacote</span></td>
-                                <td><i class="bi bi-three-dots-vertical"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Pacote Office</td>
-                                <td>R$ 100,00</td>
-                                <td>--</td>
-                                <td><span class="badge theme-primary badge-pacote">Pacote</span></td>
-                                <td><i class="bi bi-three-dots-vertical"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Photoshop</td>
-                                <td>R$ 100,00</td>
-                                <td>12 meses</td>
-                                <td><span class="badge theme-primary badge-curso">Curso Individual</span></td>
-                                <td><i class="bi bi-three-dots-vertical"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Gestão em RH</td>
-                                <td>R$ 100,00</td>
-                                <td>12 meses</td>
-                                <td><span class="badge theme-primary badge-curso">Curso Individual</span></td>
-                                <td><i class="bi bi-three-dots-vertical"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Auxiliar de Escritório</td>
-                                <td>R$ 100,00</td>
-                                <td>12 meses</td>
-                                <td><span class="badge theme-primary badge-curso">Curso Individual</span></td>
-                                <td><i class="bi bi-three-dots-vertical"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Atendente de Farmácia</td>
-                                <td>R$ 100,00</td>
-                                <td>12 meses</td>
-                                <td><span class="badge theme-primary badge-curso">Curso Individual</span></td>
-                                <td><i class="bi bi-three-dots-vertical"></i></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="registros">
-                    <p>Mostrando 1 a 8 de 150 registros</p>
-                    <nav aria-label="...">
-                        <ul class="pagination">
-                            <li class="page-item disabled">
-                                <a class="page-link">Previous</a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-current="page">2</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+        </div>
+        <div class="container_cursos">
+            <div class="table_cursos">
+                <table class="table table-dark table-hover" style="border-radius: 10px;">
+                    <thead class="thead-cursos">
+                        <tr>
+                            <th>Nome</th>
+                            <th>Valor mensal</th>
+                            <th>Duração</th>
+                            <th>Tipo</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Informática</td>
+                            <td>R$ 100,00</td>
+                            <td>12 meses</td>
+                            <td><span class="badge theme-primary badge-curso">Curso Individual</span></td>
+                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Técnico em Hardware</td>
+                            <td>R$ 100,00</td>
+                            <td>12 meses</td>
+                            <td><span class="badge theme-primary badge-curso">Curso Individual</span></td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Visualizar</a></li>
+                                        <li><a class="dropdown-item" href="#">Editar</a></li>
+                                        <li><a class="dropdown-item" href="#">Desativar</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Power BI</td>
+                            <td>R$ 100,00</td>
+                            <td>--</td>
+                            <td><span class="badge theme-primary badge-pacote">Pacote</span></td>
+                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Pacote Office</td>
+                            <td>R$ 100,00</td>
+                            <td>--</td>
+                            <td><span class="badge theme-primary badge-pacote">Pacote</span></td>
+                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Photoshop</td>
+                            <td>R$ 100,00</td>
+                            <td>12 meses</td>
+                            <td><span class="badge theme-primary badge-curso">Curso Individual</span></td>
+                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Gestão em RH</td>
+                            <td>R$ 100,00</td>
+                            <td>12 meses</td>
+                            <td><span class="badge theme-primary badge-curso">Curso Individual</span></td>
+                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Auxiliar de Escritório</td>
+                            <td>R$ 100,00</td>
+                            <td>12 meses</td>
+                            <td><span class="badge theme-primary badge-curso">Curso Individual</span></td>
+                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Atendente de Farmácia</td>
+                            <td>R$ 100,00</td>
+                            <td>12 meses</td>
+                            <td><span class="badge theme-primary badge-curso">Curso Individual</span></td>
+                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+            <div class="registros">
+                <p>Mostrando 1 a 8 de 150 registros</p>
+                <nav aria-label="...">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-current="page">2</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            const selecionarTipo = document.getElementById("selecionarTipo");
+            const camposCurso = document.getElementById("camposCurso");
+            const camposPacote = document.getElementById("camposPacote");
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+            selecionarTipo.addEventListener('change', function () {  //de acordo com o evento muda os campos
+                camposCurso.hidden = true;
+                camposPacote.hidden = true;
+
+                if (this.value === 'curso') {
+                    camposCurso.hidden = false;
+                } else if (this.value === 'pacote') {
+                    camposPacote.hidden = false;
+                }
+            });
+        </script>
 </body>
 
 </html>

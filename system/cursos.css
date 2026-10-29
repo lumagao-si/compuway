@@ -53,7 +53,7 @@
 
 .filter1 {
     margin-left: auto;
-    margin-right: 5px;;
+    margin-right: 5px;
 }
 
 .filter2 {
@@ -83,7 +83,11 @@
     color: #ffffff;
 }
 
-.modal-content input, textarea {
+.modal-content .form-control, .modal-content .form-select {
+    width: 500px;
+}
+
+.modal-content input, .modal-content textarea {
     background-color: #1f1d24 !important;
     color: #ffffff !important;
 }
@@ -91,6 +95,7 @@
 .modal-content .form-control::placeholder{
     color: #ffffff;
 }
+
 
 .cadastrarCurso {
     background-color: #F58634;
@@ -109,6 +114,7 @@
 .modal-content .btn-close {
     filter: invert(1); /*faz o x ficar claro*/
 }
+
 
 .container_cursos {
     display: flex;
@@ -155,14 +161,22 @@ p {
     color: #ffffff;
 }
 
-.pagination {
-    margin-right: 10px;
-    color: #ffffff;
-    border-color: #4e4d4e;
-    
+.modal {
+    --bs-modal-width: 540px;
 }
 
-.page-item .active {
-    background-color: #F58634 !important;
+.pagination {
+    margin-right: 10px;
+    border-color: #4e4d4e;
+  --bs-pagination-color: #ffffff;
+  --bs-pagination-hover-color: #6d6d6d;
+  --bs-pagination-hover-bg: #d4cece;
+  --bs-pagination-hover-border-color: #dee2e6;
+  --bs-pagination-active-color: #ffffff;
+  --bs-pagination-active-bg: #F58634;
+  --bs-pagination-active-border-color: #ffffff;
+  --bs-pagination-bg: #1f1d24;
+  --bs-pagination-disabled-color: #888383;
+  --bs-pagination-disabled-bg: #1f1d24
 }
 
