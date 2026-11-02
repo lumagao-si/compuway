@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     height: 50px;
     width: 100%;
     max-width: 1100px;
@@ -17,13 +18,16 @@
 .busca-container {
     display: flex;
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
     width: 350px; 
     height: 50px; 
     border: 1px solid #4e4d4e;
     border-radius: 10px;
     overflow: hidden;
-    
+}
+
+.busca-container i {
+    padding: 10px 5px 10px 15px;
 }
 
 .busca {
@@ -51,21 +55,24 @@
     margin-right: 10px;
 }
 
-.filter1 {
-    margin-left: auto;
-    margin-right: 5px;
-}
 
-.filter2 {
-    margin-right: 5px;
-}
-
-.filter1, .filter2 {
+.filter {
     height: 50px;
     border-radius: 10px;
     background-color: #1e1732;
     color: #ffffff;
     gap: 5px;
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.filter option {
+    background-color: #232b45;
+    color: #fff;
+}
+
+.filter option:hover {
+    background-color: #4a2a8a;
 }
 
 .cadastrar-cursos {
@@ -83,6 +90,10 @@
     color: #ffffff;
 }
 
+.modal-content .form-select:invalid {
+    color: #8a90a2;
+}
+
 .modal-content .form-control, .modal-content .form-select {
     width: 500px;
 }
@@ -93,7 +104,7 @@
 }
 
 .modal-content .form-control::placeholder{
-    color: #ffffff;
+    color: #8a90a2;
 }
 
 
@@ -115,7 +126,6 @@
     filter: invert(1); /*faz o x ficar claro*/
 }
 
-
 .container_cursos {
     display: flex;
     flex-direction: column;
@@ -135,24 +145,47 @@
     justify-content: center;
     text-align: center;
     border-radius: 10px;
+    border-color: #383541;
+}
+
+.table {
+    margin-bottom: 0;
+    height: 100%;
 }
 
 .table-dark .thead-cursos th{
     background-color: #383541;
 }
 
+.table tbody td {
+    padding: 5px 0 5px 0;
+    height: 45px;
+}
+
+/* Tira a borda da última linha da tabela */
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
 .badge-curso{
-    background-color: #351294;
+    background-color: #240675;
 } 
 
 .badge-pacote{
     background-color: #5c1c91;
 }
 
+.sem-resultados {
+    text-align: center;
+    color: #8a90a2;
+    padding: 24px 0;
+}
+
 .registros {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-top: auto;
 }
 
 p {
@@ -163,6 +196,45 @@ p {
 
 .modal {
     --bs-modal-width: 540px;
+}
+
+.btn-acoes {
+    background: none;
+    border: 0;
+    color: #fff;
+    font-size: 18px;
+    padding: 4px 8px 4px 8px;
+    border-radius: 6px;
+}
+
+/*remove a setinha que vem no dropdown*/
+.btn-acoes.dropdown-toggle::after {
+    display: none;
+}
+
+.btn-acoes:hover, .btn-acoes:focus-visible, .btn-acoes.show { /* .show = quando o menu está aberto */
+    background: #232b45;
+    color: #fff;
+}
+
+.dropdown-menu {
+    --bs-dropdown-bg: #1e1731;                 /* fundo do menu */
+    --bs-dropdown-color: #e8eaf2;
+    --bs-dropdown-border-color: #3a4468;       /* borda */
+    --bs-dropdown-border-radius: 10px;
+    --bs-dropdown-padding-y: 6px;
+    --bs-dropdown-min-width: 9rem;
+    --bs-dropdown-font-size: 14px;
+    --bs-dropdown-link-color: #e8eaf2;         /* texto das opções */
+    --bs-dropdown-link-hover-color: #fff;
+    --bs-dropdown-link-hover-bg: #4a2a8a;      /* roxo ao passar o mouse */
+    --bs-dropdown-link-active-color: #1a1206;
+    --bs-dropdown-link-active-bg: #f58634;    
+}
+
+/* 3) Células da tabela alinhadas ao meio, para o botão não ficar torto */
+.table_cursos td {
+    vertical-align: middle;
 }
 
 .pagination {

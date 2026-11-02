@@ -1,4 +1,17 @@
-<?php $pagina_atual = 'cursos.php'; ?>
+<?php $pagina_atual = 'cursos.php';
+
+//Array pra preencher a tabela 
+$cursos = [
+    ['id' => 1, 'nome' => 'Operador de Micro Computador e Compukids', 'tipo' => 'pacote', 'valor' => '299,90', 'carga' => '121', 'parcelas' => 16, 'descricao' => 'Introdução à informática, Windows 10, Word 2016, Excel 2016, PowerPoint 2016, Internet 9, CDA'],
+    ['id' => 2, 'nome' => 'Atendimento de Farmácia', 'tipo' => 'pacote', 'valor' => '299,90', 'carga' => '96', 'parcelas' => 16, 'descricao' => 'Atendimento ao Cliente, Técnicas de Vendas, Atendimento de Farmácia, Operador de Caixa, Marketing Pessoal'],
+    ['id' => 3, 'nome' => 'Gestão de Negócio e Vendas', 'tipo' => 'pacote', 'valor' => '299,90', 'carga' => '85', 'parcelas' => 16, 'descricao' => 'Técnicas de Administração, Contabilidade Matemática Financeira, Recursos Humanos, Técnicas de Vendas, Auxiliar de Escritório'],
+    ['id' => 4, 'nome' => 'Designer Gráfico', 'tipo' => 'pacote', 'valor' => '299,90', 'carga' => '63', 'parcelas' => 16, 'descricao' => 'Photoshop, Corel, Ilustrador, Téc. Publicidade e Propaganda, Marketing'],
+    ['id' => 5, 'nome' => 'Excel Financeiro', 'tipo' => 'pacote', 'valor' => '299,90', 'carga' => '40', 'parcelas' => 5, 'descricao' => 'Excel 2016, Excel Avançado'],
+    ['id' => 6, 'nome' => 'Tecnokids', 'tipo' => 'pacote', 'valor' => '299,90', 'carga' => '94', 'parcelas' => 16, 'descricao' => 'Photoshop, Corel, Youtuber, Criação de Games, Robótica'],
+    ['id' => 7, 'nome' => 'Excel 2016', 'tipo' => 'curso', 'valor' => '280,00', 'carga' => '16', 'parcelas' => 2, 'descricao' => ''],
+
+];
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -22,97 +35,18 @@
         </div>
         <div class="acoes">
             <div class="busca-container">
-                <input type="search" class="busca" id="floatingInputGroup1" placeholder="Buscar curso ou pacote">
-                <button class="pesquisar"><i class="bi bi-search"></i></button>
+                <i class="bi bi-search"></i>
+                <input type="search" class="busca" id="buscarCurso" placeholder="Buscar curso ou pacote">
             </div>
-            <select class="filter1" aria-label="Default select example">
-                <option selected>Todos os tipos</option>
-                <option value="1">Cursos individuais</option>
-                <option value="2">Pacotes</option>
-            </select>
-            <select class="filter2" aria-label="Default select example">
-                <option selected>Todos os status</option>
-                <option value="1">Ativos</option>
-                <option value="2">Inativos</option>
+            <select class="filter" id="filtrarTipo" aria-label="Filtrar por tipo">
+                <option value="" selected>Todos os tipos</option>
+                <option value="curso">Cursos individuais</option>
+                <option value="pacote">Pacotes</option>
             </select>
             <button type="button" class="btn btn-primary cadastrar-cursos" data-bs-toggle="modal"
                 data-bs-target="#cadastroCursos"
                 style="background-color: #F58634; color: #000000; border-color: #F58634; gap: 20px; height: 50px;">
                 <i class="bi bi-plus-lg"></i>Cadastrar curso ou pacote</button>
-            <div class="modal fade" tabindex="-1" id="cadastroCursos">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Cadastrar curso ou pacote</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form mb-3">
-                                <label for="selecionarTipo" class="form-label mb-2">Tipo</label>
-                                <select class="form-select" id="selecionarTipo"
-                                    aria-label="Floating label select example">
-                                    <option selected>Selecionar</option>
-                                    <option value="curso">Curso Individual</option>
-                                    <option value="pacote">Pacote</option>
-                                </select>
-                            </div>
-                            <div id="camposCurso" hidden>
-                                <div class="form mb-3">
-                                    <label for="nomeCurso" class="form-label mb-2">Nome do curso</label>
-                                    <input type="text" class="form-control" id="nomeCurso"
-                                        placeholder="Ex: Pacote Office">
-                                </div>
-
-                                <div class="form mb-3">
-                                    <label for="valorMensal" class="form-label mb-2">Valor da mensalidade</label>
-                                    <input type="text" class="form-control" id="valorMensal"
-                                        placeholder="Ex: R$ 100,00">
-                                </div>
-                                <div class="form mb-3">
-                                    <label for="cargaHoraria" class="form-label mb-2">Carga horária</label>
-                                    <input type="text" class="form-control" id="cargaHoraria" placeholder="Ex: 120h">
-
-                                </div>
-                                <div class="form mb-3">
-                                    <label for="duracaoCurso" class="form-label mb-2">Duração (meses)</label>
-                                    <input type="text" class="form-control" id="duracaoCurso"
-                                        placeholder="Ex: 12 meses">
-
-                                </div>
-                                <div class="form mb-3">
-                                    <label for="descricao" class="form-label mb-2">Descrição (Opcional)</label>
-                                    <textarea type="text" class="form-control" id="descricao"
-                                        placeholder="Ex: Descrição do curso">
-                                </textarea>
-                                </div>
-                            </div>
-                            <div id="camposPacote" hidden>
-                                <div class="form mb-3">
-                                    <label for="nomePacote" class="form-label mb-2">Nome do pacote</label>
-                                    <input type="text" class="form-control" id="nomePacote"
-                                        placeholder="Ex: Pacote Office">
-                                </div>
-                                <div class="form mb-3">
-                                    <label for="valorPacote" class="form-label mb-2">Valor do pacote</label>
-                                    <input type="text" class="form-control" id="valorPacote"
-                                        placeholder="Ex: R$ 150,00">
-                                </div>
-                                <div class="form mb-3">
-                                    <label for="descricaoPacote" class="form-label mb-2">Descrição (opcional)</label>
-                                    <textarea class="form-control" id="descricaoPacote"
-                                        placeholder="Quais cursos estão incluídos no pacote?"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary fechar"
-                                data-bs-dismiss="modal">Fechar</button>
-                            <button type="button" class="btn btn-primary cadastrarCurso">Cadastrar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="container_cursos">
             <div class="table_cursos">
@@ -121,89 +55,55 @@
                         <tr>
                             <th>Nome</th>
                             <th>Valor mensal</th>
-                            <th>Duração</th>
+                            <th>Parcelas</th>
                             <th>Tipo</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Informática</td>
-                            <td>R$ 100,00</td>
-                            <td>12 meses</td>
-                            <td><span class="badge theme-primary badge-curso">Curso Individual</span></td>
-                            <td><i class="bi bi-three-dots-vertical"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Técnico em Hardware</td>
-                            <td>R$ 100,00</td>
-                            <td>12 meses</td>
-                            <td><span class="badge theme-primary badge-curso">Curso Individual</span></td>
-                            <td>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="bi bi-three-dots-vertical"></i>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Visualizar</a></li>
-                                        <li><a class="dropdown-item" href="#">Editar</a></li>
-                                        <li><a class="dropdown-item" href="#">Desativar</a></li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Power BI</td>
-                            <td>R$ 100,00</td>
-                            <td>--</td>
-                            <td><span class="badge theme-primary badge-pacote">Pacote</span></td>
-                            <td><i class="bi bi-three-dots-vertical"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Pacote Office</td>
-                            <td>R$ 100,00</td>
-                            <td>--</td>
-                            <td><span class="badge theme-primary badge-pacote">Pacote</span></td>
-                            <td><i class="bi bi-three-dots-vertical"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Photoshop</td>
-                            <td>R$ 100,00</td>
-                            <td>12 meses</td>
-                            <td><span class="badge theme-primary badge-curso">Curso Individual</span></td>
-                            <td><i class="bi bi-three-dots-vertical"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Gestão em RH</td>
-                            <td>R$ 100,00</td>
-                            <td>12 meses</td>
-                            <td><span class="badge theme-primary badge-curso">Curso Individual</span></td>
-                            <td><i class="bi bi-three-dots-vertical"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Auxiliar de Escritório</td>
-                            <td>R$ 100,00</td>
-                            <td>12 meses</td>
-                            <td><span class="badge theme-primary badge-curso">Curso Individual</span></td>
-                            <td><i class="bi bi-three-dots-vertical"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Atendente de Farmácia</td>
-                            <td>R$ 100,00</td>
-                            <td>12 meses</td>
-                            <td><span class="badge theme-primary badge-curso">Curso Individual</span></td>
-                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                        <?php foreach ($cursos as $c): ?>
+                            <tr data-id="<?= $c['id'] ?>" data-nome="<?= htmlspecialchars($c['nome'], ENT_QUOTES) ?>"
+                                data-tipo="<?= $c['tipo'] ?>" data-valor="<?= $c['valor'] ?>"
+                                data-carga="<?= $c['carga'] ?>" data-parcelas="<?= $c['parcelas'] ?>"
+                                data-descricao="<?= htmlspecialchars($c['descricao'], ENT_QUOTES) ?>">
+                                <td><?= htmlspecialchars($c['nome']) ?></td>
+                                <td>R$ <?= $c['valor'] ?></td>
+                                <td><?= $c['parcelas'] ?></td>
+                                <td>
+                                    <?php if ($c['tipo'] === 'pacote'): ?>
+                                        <span class="badge theme-primary badge-pacote">Pacote</span>
+                                    <?php else: ?>
+                                        <span class="badge theme-primary badge-curso">Curso Individual</span>
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn-acoes dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false" aria-label="Ações">
+                                            <i class="bi bi-three-dots-vertical"></i>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#visualizarCurso">Visualizar</a></li>
+                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                                    data-bs-target="#editarCurso">Editar</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                        <tr id="semResultados" hidden>
+                            <td colspan="5" class="sem-resultados">Nenhum resultado encontrado</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div class="registros">
-                <p>Mostrando 1 a 8 de 150 registros</p>
-                <nav aria-label="...">
+                <p id="contador">Mostrando 1 a <?= count($cursos) ?> de <?= count($cursos) ?> registros</p>
+                <nav aria-label="Paginação">
                     <ul class="pagination">
                         <li class="page-item disabled">
-                            <a class="page-link">Previous</a>
+                            <a class="page-link">Anterior</a>
                         </li>
                         <li class="page-item active"><a class="page-link" href="#">1</a></li>
                         <li class="page-item">
@@ -211,29 +111,251 @@
                         </li>
                         <li class="page-item"><a class="page-link" href="#">3</a></li>
                         <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
+                            <a class="page-link" href="#">Próximo</a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
-            const selecionarTipo = document.getElementById("selecionarTipo");
-            const camposCurso = document.getElementById("camposCurso");
-            const camposPacote = document.getElementById("camposPacote");
+    </div>
+    <!-- Cadastrar curso ou pacote -->
+    <div class="modal fade" tabindex="-1" id="cadastroCursos">
+        <div class="modal-dialog">
+            <div class="modal-content">
 
-            selecionarTipo.addEventListener('change', function () {  //de acordo com o evento muda os campos
-                camposCurso.hidden = true;
-                camposPacote.hidden = true;
+                <form method="post" action="salvar_curso.php">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Cadastrar curso ou pacote</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form mb-3">
+                            <label for="selecionarTipo" class="form-label mb-2">Tipo</label>
+                            <select class="form-select" id="selecionarTipo" aria-label="Selecionar curso ou pacote"
+                                name="tipo" required>
+                                <option value="" selected disabled>Selecionar</option>
+                                <option value="curso">Curso Individual</option>
+                                <option value="pacote">Pacote</option>
+                            </select>
+                        </div>
+                        <div id="camposComuns" hidden>
+                            <div class="form mb-3">
+                                <label for="nome" class="form-label mb-2">Nome</label>
+                                <input type="text" class="form-control" id="nome" name="nome"
+                                    placeholder="Ex: Pacote Office" required>
+                            </div>
+                            <div class="form mb-3">
+                                <label for="valorMensal" class="form-label mb-2">Valor mensal de tabela</label>
+                                <input type="text" class="form-control" id="valorMensal" name="valor"
+                                    placeholder="Ex: R$ 299,90" required>
+                            </div>
+                            <div class="form mb-3">
+                                <label for="parcelas" class="form-label mb-2">Número de parcelas</label>
+                                <input type="number" min="1" class="form-control" id="parcelas" name="parcelas"
+                                    placeholder="Ex: 16" required>
+                            </div>
+                            <div class="form mb-3">
+                                <label for="cargaHoraria" class="form-label mb-2">Carga horária (horas)</label>
+                                <input type="number" min="1" class="form-control" id="cargaHoraria" name="carga_horaria"
+                                    placeholder="Ex: 120">
+                            </div>
+                            <div class="form mb-3">
+                                <label for="descricao" class="form-label mb-2" id="labelDescricao">Descrição
+                                    (opcional)</label>
+                                <textarea class="form-control" id="descricao" name="descricao"
+                                    placeholder="Ex: Descrição do curso"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary fechar" data-bs-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary cadastrarCurso">Cadastrar</button>
+                    </div>
+                </form>
 
-                if (this.value === 'curso') {
-                    camposCurso.hidden = false;
-                } else if (this.value === 'pacote') {
-                    camposPacote.hidden = false;
-                }
+            </div>
+        </div>
+    </div>
+    <!-- Visualizar-->
+    <div class="modal fade" tabindex="-1" id="visualizarCurso">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detalhes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-2">
+                        <div class="col-5 text-secondary">Nome</div>
+                        <div class="col-7" id="v-nome"></div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-5 text-secondary">Tipo</div>
+                        <div class="col-7" id="v-tipo"></div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-5 text-secondary">Valor mensal</div>
+                        <div class="col-7" id="v-valor"></div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-5 text-secondary">Parcelas</div>
+                        <div class="col-7" id="v-parcelas"></div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-5 text-secondary">Carga horária</div>
+                        <div class="col-7" id="v-carga"></div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-5 text-secondary" id="v-label-descricao">Descrição</div>
+                        <div class="col-7" id="v-descricao"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary fechar" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Editar -->
+    <div class="modal fade" tabindex="-1" id="editarCurso">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Crie o arquivo atualizar_curso.php para receber estes dados -->
+                <form method="post" action="atualizar_curso.php">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Editar curso ou pacote</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="e-id" name="id"> <!-- o id diz ao PHP qual curso atualizar -->
+                        <div class="form mb-3">
+                            <label for="e-tipo" class="form-label mb-2">Tipo</label>
+                            <select class="form-select" id="e-tipo" name="tipo" required>
+                                <option value="curso">Curso Individual</option>
+                                <option value="pacote">Pacote</option>
+                            </select>
+                        </div>
+                        <div class="form mb-3">
+                            <label for="e-nome" class="form-label mb-2">Nome</label>
+                            <input type="text" class="form-control" id="e-nome" name="nome" required>
+                        </div>
+                        <div class="form mb-3">
+                            <label for="e-valor" class="form-label mb-2">Valor mensal de tabela</label>
+                            <input type="text" class="form-control" id="e-valor" name="valor" required>
+                        </div>
+                        <div class="form mb-3">
+                            <label for="e-parcelas" class="form-label mb-2">Número de parcelas</label>
+                            <input type="number" min="1" class="form-control" id="e-parcelas" name="parcelas" required>
+                        </div>
+                        <div class="form mb-3">
+                            <label for="e-carga" class="form-label mb-2">Carga horária (horas)</label>
+                            <input type="number" min="1" class="form-control" id="e-carga" name="carga_horaria">
+                        </div>
+                        <div class="form mb-3">
+                            <label for="e-descricao" class="form-label mb-2">Descrição (no pacote, os cursos na
+                                ordem)</label>
+                            <textarea class="form-control" id="e-descricao" name="descricao"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary fechar" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary cadastrarCurso">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script> 
+        //JavaScript
+
+        const campoBusca = document.getElementById('buscarCurso');
+        const filtroTipo = document.getElementById('filtrarTipo');
+        const semResultados = document.getElementById('semResultados');
+        const contador = document.getElementById('contador');
+
+        function filtrarTabela() {
+            const pesquisa = campoBusca.value.toLowerCase().trim();
+            const tipo = filtroTipo.value;   
+            let visiveis = 0;     
+            document.querySelectorAll('tbody tr[data-nome]').forEach(function (linha) {
+                const combinaNome = linha.dataset.nome.toLowerCase().includes(pesquisa);
+                const combinaTipo = (tipo === '' || linha.dataset.tipo === tipo);
+                const aparece = combinaNome && combinaTipo;
+
+                linha.style.display = aparece ? '' : 'none';
+                if (aparece) visiveis++;     //soma 1 para cada linha que aparece
             });
-        </script>
+
+            //Mostra a mensagem só quando nenhuma linha apareceu
+            semResultados.hidden = (visiveis > 0);
+
+            //Atualiza o texto do rodapé
+            contador.textContent = visiveis > 0
+                ? 'Mostrando 1 a ' + visiveis + ' de ' + visiveis + ' registros'
+                : 'Nenhum registro encontrado';
+        }
+
+        campoBusca.addEventListener('input', filtrarTabela);
+        filtroTipo.addEventListener('change', filtrarTabela);
+
+        //Cadastro
+        const selecionarTipo = document.getElementById("selecionarTipo");
+        const camposComuns = document.getElementById("camposComuns");
+        const labelDescricao = document.getElementById("labelDescricao");
+        const descricao = document.getElementById('descricao');
+
+        function mostrarCamposDoTipo() {   //de acordo com o evento muda os campos
+            camposComuns.hidden = false;
+            if (this.value === 'pacote') {
+                labelDescricao.textContent = 'Cursos do pacote, na ordem';
+                descricao.placeholder = 'Ex: Word, Excel, PowerPoint';
+                descricao.required = true;      // no pacote, os cursos são obrigatórios
+            } else {
+                labelDescricao.textContent = 'Descrição (opcional)';
+                descricao.placeholder = 'Ex: Descrição do curso';
+                descricao.required = false;
+            }
+        });
+
+        selecionarTipo.addEventListener('change', mostrarCamposDoTipo);
+
+        //Limpa o modal após fechar
+        function limparModalCadastro() {
+            this.querySelector('form').reset();
+            camposComuns.hidden = true;
+        };
+
+        document.getElementById('cadastroCursos').addEventListener('hidden.bs.modal', limparModalCadastro);
+
+        //Visualização
+        function preencherVisualizacao(e) {
+            const d = e.relatedTarget.closest('tr').dataset;
+            const ehPacote = d.tipo === 'pacote';
+            document.getElementById('v-nome').textContent = d.nome;
+            document.getElementById('v-tipo').textContent = ehPacote ? 'Pacote' : 'Curso Individual';
+            document.getElementById('v-valor').textContent = 'R$ ' + d.valor;
+            document.getElementById('v-parcelas').textContent = d.parcelas;
+            document.getElementById('v-carga').textContent = d.carga ? d.carga + ' h' : '—';
+            document.getElementById('v-label-descricao').textContent = ehPacote ? 'Cursos do pacote' : 'Descrição';
+            document.getElementById('v-descricao').textContent = d.descricao || '—';
+        };
+
+        document.getElementById('visualizarCurso').addEventListener('show.bs.modal', preencherVisualizacao);
+
+        //Edição
+        function preencherEdicao(e) {
+            const d = e.relatedTarget.closest('tr').dataset;
+            document.getElementById('e-id').value = d.id;
+            document.getElementById('e-tipo').value = d.tipo;
+            document.getElementById('e-nome').value = d.nome;
+            document.getElementById('e-valor').value = d.valor;
+            document.getElementById('e-parcelas').value = d.parcelas;
+            document.getElementById('e-carga').value = d.carga;
+            document.getElementById('e-descricao').value = d.descricao;
+        };
+        document.getElementById('editarCurso').addEventListener('show.bs.modal', preencherEdicao);
+    </script>
 </body>
 
 </html>
