@@ -9,6 +9,12 @@ $cursos = [
     ['id' => 5, 'nome' => 'Excel Financeiro', 'tipo' => 'pacote', 'valor' => '299,90', 'carga' => '40', 'parcelas' => 5, 'descricao' => 'Excel 2016, Excel Avançado'],
     ['id' => 6, 'nome' => 'Tecnokids', 'tipo' => 'pacote', 'valor' => '299,90', 'carga' => '94', 'parcelas' => 16, 'descricao' => 'Photoshop, Corel, Youtuber, Criação de Games, Robótica'],
     ['id' => 7, 'nome' => 'Excel 2016', 'tipo' => 'curso', 'valor' => '280,00', 'carga' => '16', 'parcelas' => 2, 'descricao' => ''],
+    ['id' => 8, 'nome' => 'Excel Avançado', 'tipo' => 'individual', 'valor' => 450.00, 'carga' => 40, 'parcelas' => 3, 'descricao' => ''],
+['id' => 9, 'nome' => 'Pacote Design Gráfico', 'tipo' => 'pacote', 'valor' => 900.00, 'carga' => 120, 'parcelas' => 6, 'descricao' => 'CorelDRAW, Photoshop, Illustrator'],
+['id' => 10, 'nome' => 'Power BI', 'tipo' => 'individual', 'valor' => 500.00, 'carga' => 40, 'parcelas' => 3, 'descricao' => ''],
+['id' => 11, 'nome' => 'Pacote Informática Básica', 'tipo' => 'pacote', 'valor' => 700.00, 'carga' => 100, 'parcelas' => 5, 'descricao' => 'Windows, Word, Excel e Internet'],
+['id' => 12, 'nome' => 'Lógica de Programação', 'tipo' => 'individual', 'valor' => 600.00, 'carga' => 60, 'parcelas' => 4, 'descricao' => ''],
+
 
 ];
 ?>
@@ -101,19 +107,7 @@ $cursos = [
             <div class="registros">
                 <p id="contador">Mostrando 1 a <?= count($cursos) ?> de <?= count($cursos) ?> registros</p>
                 <nav aria-label="Paginação">
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link">Anterior</a>
-                        </li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-current="page">2</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Próximo</a>
-                        </li>
-                    </ul>
+                    <ul class="pagination" id="paginacao"></ul>
                 </nav>
             </div>
         </div>
@@ -266,38 +260,8 @@ $cursos = [
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script> 
+    <script>
         //JavaScript
-
-        const campoBusca = document.getElementById('buscarCurso');
-        const filtroTipo = document.getElementById('filtrarTipo');
-        const semResultados = document.getElementById('semResultados');
-        const contador = document.getElementById('contador');
-
-        function filtrarTabela() {
-            const pesquisa = campoBusca.value.toLowerCase().trim();
-            const tipo = filtroTipo.value;   
-            let visiveis = 0;     
-            document.querySelectorAll('tbody tr[data-nome]').forEach(function (linha) {
-                const combinaNome = linha.dataset.nome.toLowerCase().includes(pesquisa);
-                const combinaTipo = (tipo === '' || linha.dataset.tipo === tipo);
-                const aparece = combinaNome && combinaTipo;
-
-                linha.style.display = aparece ? '' : 'none';
-                if (aparece) visiveis++;     //soma 1 para cada linha que aparece
-            });
-
-            //Mostra a mensagem só quando nenhuma linha apareceu
-            semResultados.hidden = (visiveis > 0);
-
-            //Atualiza o texto do rodapé
-            contador.textContent = visiveis > 0
-                ? 'Mostrando 1 a ' + visiveis + ' de ' + visiveis + ' registros'
-                : 'Nenhum registro encontrado';
-        }
-
-        campoBusca.addEventListener('input', filtrarTabela);
-        filtroTipo.addEventListener('change', filtrarTabela);
 
         //Cadastro
         const selecionarTipo = document.getElementById("selecionarTipo");
@@ -316,7 +280,7 @@ $cursos = [
                 descricao.placeholder = 'Ex: Descrição do curso';
                 descricao.required = false;
             }
-        });
+        };
 
         selecionarTipo.addEventListener('change', mostrarCamposDoTipo);
 
@@ -355,6 +319,143 @@ $cursos = [
             document.getElementById('e-descricao').value = d.descricao;
         };
         document.getElementById('editarCurso').addEventListener('show.bs.modal', preencherEdicao);
+
+        function limparModalEdicao() {
+            this.querySelector('form').reset();
+        };
+
+        document.getElementById('editarCurso').addEventListener('hidden.bs.modal', limparModalEdicao);
+
+        // Busca e filtro
+        const campoBusca = document.getElementById('buscarCurso');
+        const filtroTipo = document.getElementById('filtrarTipo');
+        const semResultados = document.getElementById('semResultados');
+        const contador = document.getElementById('contador');
+        const paginacao = document.getElementById('paginacao');
+
+        // Guarda todas as linhas da tabela
+        const linhas = Array.from(
+            document.querySelectorAll('tbody tr[data-nome]')
+        );
+
+        // Configuração da paginação
+        const registrosPorPagina = 7;
+        let paginaAtual = 1;
+        let linhasFiltradas = [...linhas];
+
+        // Cria um botão da paginação
+        function criarBotaoPagina(texto, numero, desabilitado = false) {
+            const item = document.createElement('li');
+            item.classList.add('page-item');
+
+            if (desabilitado) {
+                item.classList.add('disabled');
+            }
+
+            if (numero === paginaAtual && texto === String(paginaAtual)) {
+                item.classList.add('active');
+            }
+
+            const botao = document.createElement('button');
+            botao.type = 'button';
+            botao.classList.add('page-link');
+            botao.textContent = texto;
+            botao.disabled = desabilitado;
+
+            botao.addEventListener('click', function () {
+                paginaAtual = numero;
+                atualizarTabela();
+            });
+
+            item.appendChild(botao);
+            paginacao.appendChild(item);
+        }
+
+        // Monta os botões da paginação
+        function montarPaginacao(totalPaginas) {
+            paginacao.innerHTML = '';
+
+            if (totalPaginas <= 1) return;
+
+            criarBotaoPagina('Anterior', paginaAtual - 1, paginaAtual === 1);
+
+            for (let i = 1; i <= totalPaginas; i++) {
+                criarBotaoPagina(String(i), i);
+            }
+
+            criarBotaoPagina(
+                'Próximo',
+                paginaAtual + 1,
+                paginaAtual === totalPaginas
+            );
+        }
+
+        // Atualiza a tabela conforme a busca, o filtro e a página
+        function atualizarTabela() {
+            const pesquisa = campoBusca.value.toLowerCase().trim();
+            const tipo = filtroTipo.value;
+
+            // Filtra os cursos pelo nome e pelo tipo
+            linhasFiltradas = linhas.filter(function (linha) {
+                const combinaNome = linha.dataset.nome
+                    .toLowerCase()
+                    .includes(pesquisa);
+
+                const combinaTipo = tipo === '' || linha.dataset.tipo === tipo;
+
+                return combinaNome && combinaTipo;
+            });
+
+            const totalRegistros = linhasFiltradas.length;
+            const totalPaginas = Math.ceil(totalRegistros / registrosPorPagina);
+
+            // Ajusta a página caso ela não exista mais após o filtro
+            if (paginaAtual > totalPaginas) {
+                paginaAtual = Math.max(1, totalPaginas);
+            }
+
+            // Esconde todas as linhas
+            linhas.forEach(function (linha) {
+                linha.style.display = 'none';
+            });
+
+            // Calcula os registros da página atual
+            const inicio = (paginaAtual - 1) * registrosPorPagina;
+            const fim = Math.min(inicio + registrosPorPagina, totalRegistros);
+
+            // Mostra somente os registros da página atual
+            linhasFiltradas.slice(inicio, fim).forEach(function (linha) {
+                linha.style.display = '';
+            });
+
+            // Exibe a mensagem quando não há resultados
+            semResultados.hidden = totalRegistros > 0;
+
+            // Atualiza o contador
+            if (totalRegistros > 0) {
+                contador.textContent =
+                    `Mostrando ${inicio + 1} a ${fim} de ${totalRegistros} registros`;
+            } else {
+                contador.textContent = 'Nenhum registro encontrado';
+            }
+
+            montarPaginacao(totalPaginas);
+        }
+
+        // Quando o usuário pesquisa
+        campoBusca.addEventListener('input', function () {
+            paginaAtual = 1;
+            atualizarTabela();
+        });
+
+        // Quando o usuário seleciona um tipo
+        filtroTipo.addEventListener('change', function () {
+            paginaAtual = 1;
+            atualizarTabela();
+        });
+
+        // Mostra a primeira página ao carregar
+        atualizarTabela();
     </script>
 </body>
 
