@@ -37,7 +37,7 @@ $cursos = [
     <?php include __DIR__ . '/../components/sidebar.php'; //chama a sidebar ?>
     <div class="main">
         <div class="header-cursos">
-            <h1 class="title">Cursos</h1>
+            <h1 class="title">Cursos e pacotes</h1>
         </div>
         <div class="acoes">
             <div class="busca-container">
