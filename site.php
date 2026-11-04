@@ -7,13 +7,10 @@ $imagemFachada = "src/images/compuway-fachada.png";
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Compuway | Educação e Tecnologia</title>
-
     <link rel="stylesheet" href="components/site.css">
 </head>
 
@@ -21,7 +18,6 @@ $imagemFachada = "src/images/compuway-fachada.png";
 
     <header class="cabecalho">
         <div class="menu">
-
             <a href="#inicio" aria-label="Página inicial da Compuway">
                 <img src="<?= $imagemLogo ?>" alt="Logo Compuway">
             </a>
@@ -36,22 +32,16 @@ $imagemFachada = "src/images/compuway-fachada.png";
             <a class="botao-login" href="system/login.php">
                 Login <span aria-hidden="true">↗</span>
             </a>
-
         </div>
     </header>
 
     <main>
 
-        <!-- INÍCIO -->
-
         <section class="inicio" id="inicio">
-
             <div class="inicio-fundo"></div>
 
             <div class="inicio-conteudo">
-
                 <div class="inicio-texto">
-
                     <h1>
                         Você será o Próximo
                         <span>Gênio da Informática!</span>
@@ -65,7 +55,6 @@ $imagemFachada = "src/images/compuway-fachada.png";
                     </p>
 
                     <div class="inicio-botoes">
-
                         <a class="botao-principal" href="#cursos">
                             Conheça nossos cursos
                         </a>
@@ -73,34 +62,22 @@ $imagemFachada = "src/images/compuway-fachada.png";
                         <a class="botao-secundario" href="#" onclick="return false;">
                             Converse com a escola
                         </a>
-
                     </div>
-
                 </div>
 
                 <div class="inicio-imagem">
-
                     <img
                         src="<?= $imagemBanner ?>"
                         alt="Estudante aprendendo informática"
                     >
-
                 </div>
-
             </div>
-
         </section>
 
-        <!-- HISTÓRIA -->
-
         <section class="historia" id="historia">
-
             <div class="historia-container">
-
                 <div class="historia-conteudo">
-
                     <div class="historia-texto">
-
                         <h2>
                             Nossa <span>História</span>
                         </h2>
@@ -110,163 +87,108 @@ $imagemFachada = "src/images/compuway-fachada.png";
                         </h3>
 
                         <p>
-                            Há mais de 21 anos, a Compuway nasceu com
-                            o propósito de transformar conhecimento
-                            em novas oportunidades.
+                            Há mais de 21 anos, a Compuway nasceu com o propósito de transformar conhecimento em novas oportunidades.
                         </p>
 
                         <p>
-                            Acreditamos que a educação e a tecnologia
-                            são ferramentas importantes para transformar
-                            vidas e abrir portas para novas oportunidades.
+                            A Compuway acredita que a educação e a
+                            tecnologia são ferramentas importantes
+                            para transformar vidas e abrir portas
+                            para novas oportunidades.
                         </p>
 
                         <p>
-                            Ao longo dessa trajetória, trabalhamos para
-                            oferecer conhecimento prático e preparar
-                            nossos alunos para os desafios do mercado
-                            de trabalho.
+                            Ao longo de nossa trajetória, trabalhamos
+                            para oferecer conhecimento prático e
+                            preparar nossos alunos para os desafios
+                            do mercado de trabalho.
                         </p>
-
                     </div>
 
                     <div class="historia-destaque">
-
                         <p>
-                            <strong>21 anos de história</strong>, milhares
-                            de alunos e um propósito: preparar você
-                            para o futuro.
+                            21 anos de história, milhares de alunos
+                            e um propósito: preparar você para o futuro.
                         </p>
-
                     </div>
-
                 </div>
 
                 <div class="historia-imagem">
-
                     <img
                         src="<?= $imagemFachada ?>"
-                        alt="Fachada da escola Compuway"
+                        alt="Fachada da Compuway"
                         loading="lazy"
                     >
-
                 </div>
 
                 <div class="diferenciais">
-
                     <article class="diferencial-card">
-
                         <div class="icone" aria-hidden="true">✓</div>
-
                         <div>
                             <h3>Ensino prático</h3>
-
                             <p>
                                 Aprendizado voltado para situações
                                 reais do dia a dia.
                             </p>
                         </div>
-
                     </article>
 
                     <article class="diferencial-card">
-
                         <div class="icone" aria-hidden="true">★</div>
-
                         <div>
                             <h3>Profissionais qualificados</h3>
-
                             <p>
                                 Orientação para desenvolver
                                 habilidades e conhecimentos.
                             </p>
                         </div>
-
                     </article>
 
                     <article class="diferencial-card">
-
                         <div class="icone" aria-hidden="true">↗</div>
-
                         <div>
                             <h3>Novas oportunidades</h3>
-
                             <p>
                                 Conhecimento para avançar nos
                                 estudos e na carreira.
                             </p>
                         </div>
-
                     </article>
-
                 </div>
-
             </div>
-
         </section>
 
-        <!-- CURSOS -->
-
         <section class="cursos" id="cursos">
-
             <div class="cursos-container">
-
                 <div class="cursos-cabecalho">
-
                     <div class="cursos-introducao">
-
-                        <span class="cursos-etiqueta">
-                            CURSOS E PACOTES
-                        </span>
-
-                        <h2>
-                            Do básico ao avançado,
-                            <span>você encontra aqui!</span>
-                        </h2>
-
+                        <span class="cursos-etiqueta">CURSOS E PACOTES</span>
+                        <h2>Do básico ao avançado, <span>você encontra aqui!</span></h2>
                         <p>
-                            Conheça nossas formações e desenvolva
-                            habilidades para ampliar suas oportunidades
-                            no mercado de trabalho.
+                            Conheça nossas formações e desenvolva habilidades
+                            para ampliar suas oportunidades no mercado de trabalho.
                         </p>
-
                     </div>
 
                     <div class="cursos-beneficios">
-
                         <div class="cursos-beneficio">
                             <span class="icone" aria-hidden="true">✓</span>
-                            <span>
-                                Aulas práticas e<br>dinâmicas
-                            </span>
+                            <span>Aulas práticas e<br>dinâmicas</span>
                         </div>
 
                         <div class="cursos-beneficio">
                             <span class="icone" aria-hidden="true">★</span>
-                            <span>
-                                Professores<br>especializados
-                            </span>
+                            <span>Professores<br>especializados</span>
                         </div>
 
                         <div class="cursos-beneficio">
                             <span class="icone" aria-hidden="true">▣</span>
-                            <span>
-                                Certificado de<br>conclusão
-                            </span>
+                            <span>Certificado de<br>conclusão</span>
                         </div>
-
                     </div>
-
                 </div>
 
-                <!-- ABAS DOS CURSOS -->
-
-                <div
-                    class="cursos-abas"
-                    role="tablist"
-                    aria-label="Categorias de cursos"
-                >
-
+                <div class="cursos-abas" role="tablist" aria-label="Categorias de cursos">
                     <button
                         type="button"
                         class="ativo"
@@ -289,444 +211,141 @@ $imagemFachada = "src/images/compuway-fachada.png";
                     >
                         Pacotes de cursos
                     </button>
-
-                    <button
-                        type="button"
-                        role="tab"
-                        id="aba-todos"
-                        aria-selected="false"
-                        aria-controls="todos-cursos"
-                        tabindex="-1"
-                    >
-                        Todos os cursos
-                    </button>
-
                 </div>
-
-                <!-- CURSOS INDIVIDUAIS -->
 
                 <div
                     class="cursos-painel"
                     id="cursos-individuais"
                     role="tabpanel"
                     aria-labelledby="aba-individuais"
-                    tabindex="0"
                 >
-
                     <div class="cursos-carrossel">
-
                         <button
                             class="seta-cursos seta-anterior"
                             type="button"
                             aria-label="Ver cursos anteriores"
-                        >
-                            &#10094;
-                        </button>
+                        >&#10094;</button>
 
                         <div class="cursos-lista">
-
                             <article class="curso-card">
-
-                                <img
-                                    src="src/images/curso-hardware.png"
-                                    alt="Componentes de computador para montagem e manutenção"
-                                    loading="lazy"
-                                >
-
+                                <img src="src/images/curso-hardware.png" alt="Componentes de computador para montagem e manutenção" loading="lazy">
                                 <div class="curso-conteudo">
-
                                     <h3>T.I. em Hardware</h3>
-
-                                    <p>
-                                        Aprenda sobre componentes,
-                                        montagem, manutenção e diagnóstico
-                                        de computadores.
-                                    </p>
-
-                                    <a class="botao-principal" href="#contato">
-                                        Saiba mais
-                                    </a>
-
+                                    <p>Aprenda sobre componentes, montagem, manutenção e diagnóstico de computadores.</p>
+                                    <a class="botao-principal" href="#contato">Saiba mais</a>
                                 </div>
-
                             </article>
 
                             <article class="curso-card">
-
-                                <img
-                                    src="src/images/curso-excel.png"
-                                    alt="Curso de Excel Essencial e Avançado"
-                                    loading="lazy"
-                                >
-
+                                <img src="src/images/curso-excel.png" alt="Curso de Excel Essencial e Avançado" loading="lazy">
                                 <div class="curso-conteudo">
-
                                     <h3>Excel Essencial e Avançado</h3>
-
-                                    <p>
-                                        Desenvolva habilidades com
-                                        planilhas, fórmulas, funções
-                                        e organização de dados.
-                                    </p>
-
-                                    <a class="botao-principal" href="#contato">
-                                        Saiba mais
-                                    </a>
-
+                                    <p>Desenvolva habilidades com planilhas, fórmulas, funções e organização de dados.</p>
+                                    <a class="botao-principal" href="#contato">Saiba mais</a>
                                 </div>
-
                             </article>
 
                             <article class="curso-card">
-
-                                <img
-                                    src="src/images/curso-power-bi.png"
-                                    alt="Curso de Power BI e análise de dados"
-                                    loading="lazy"
-                                >
-
+                                <img src="src/images/curso-power-bi.png" alt="Curso de Power BI e análise de dados" loading="lazy">
                                 <div class="curso-conteudo">
-
                                     <h3>Power BI</h3>
-
-                                    <p>
-                                        Aprenda a organizar dados e criar
-                                        relatórios e painéis visuais.
-                                    </p>
-
-                                    <a class="botao-principal" href="#contato">
-                                        Saiba mais
-                                    </a>
-
+                                    <p>Aprenda a organizar dados e criar relatórios e painéis visuais.</p>
+                                    <a class="botao-principal" href="#contato">Saiba mais</a>
                                 </div>
-
                             </article>
 
+                            <article class="curso-card">
+                                <img src="src/images/curso-rh.png" alt="Curso de Recursos Humanos" loading="lazy">
+                                <div class="curso-conteudo">
+                                    <h3>Recursos Humanos</h3>
+                                    <p>Aprenda gestão de pessoas, recrutamento e seleção e rotinas de departamento pessoal na prática.</p>
+                                    <a class="botao-principal" href="#contato">Saiba mais</a>
+                                </div>
+                            </article>
+
+                            <article class="curso-card">
+                                <img src="src/images/curso-auxiliar-escritorio.png" alt="Curso de Auxiliar de Escritório" loading="lazy">
+                                <div class="curso-conteudo">
+                                    <h3>Auxiliar de Escritório</h3>
+                                    <p>Aprenda rotinas administrativas e organização de documentos na prática.</p>
+                                    <a class="botao-principal" href="#contato">Saiba mais</a>
+                                </div>
+                            </article>
+
+                            <article class="curso-card">
+                                <img src="src/images/curso-word-2016.png" alt="Curso de Word 2016" loading="lazy">
+                                <div class="curso-conteudo">
+                                    <h3>Word 2016</h3>
+                                    <p>Aprenda a criar e formatar documentos, utilizando os principais recursos do Word 2016.</p>
+                                    <a class="botao-principal" href="#contato">Saiba mais</a>
+                                </div>
+                            </article>
                         </div>
 
                         <button
                             class="seta-cursos seta-proxima"
                             type="button"
                             aria-label="Ver próximos cursos"
-                        >
-                            &#10095;
-                        </button>
-
+                        >&#10095;</button>
                     </div>
-
                 </div>
-
-                <!-- PACOTES DE CURSOS -->
 
                 <div
                     class="cursos-painel"
                     id="pacotes-cursos"
                     role="tabpanel"
                     aria-labelledby="aba-pacotes"
-                    tabindex="0"
                     hidden
                 >
-
                     <div class="cursos-carrossel">
-
                         <button
                             class="seta-cursos seta-anterior"
                             type="button"
                             aria-label="Ver pacotes anteriores"
-                        >
-                            &#10094;
-                        </button>
+                        >&#10094;</button>
 
                         <div class="cursos-lista">
-
                             <article class="curso-card">
-
-                                <div class="curso-imagem-placeholder">
-                                    Pacote Office
-                                </div>
-
+                                <img src="src/images/curso-pacote-office.png" alt="Pacote Office Completo" loading="lazy">
                                 <div class="curso-conteudo">
-
                                     <h3>Pacote Office Completo</h3>
-
-                                    <p>
-                                        Domine as principais ferramentas
-                                        do pacote Office para o dia a dia
-                                        profissional.
-                                    </p>
-
-                                    <a class="botao-principal" href="#contato">
-                                        Ver pacote
-                                    </a>
-
+                                    <p>Domine as principais ferramentas do pacote Office para o dia a dia profissional.</p>
+                                    <a class="botao-principal" href="#contato">Ver pacote</a>
                                 </div>
-
                             </article>
 
                             <article class="curso-card">
-
-                                <div class="curso-imagem-placeholder">
-                                    Design Gráfico
-                                </div>
-
+                                <img src="src/images/curso-design-grafico.png" alt="Pacote de Design Gráfico" loading="lazy">
                                 <div class="curso-conteudo">
-
                                     <h3>Pacote de Design Gráfico</h3>
-
-                                    <p>
-                                        Aprenda a criar artes digitais,
-                                        logotipos e materiais visuais
-                                        utilizando ferramentas de design.
-                                    </p>
-
-                                    <a class="botao-principal" href="#contato">
-                                        Ver pacote
-                                    </a>
-
+                                    <p>Aprenda a criar artes digitais, logotipos e materiais visuais utilizando ferramentas de design.</p>
+                                    <a class="botao-principal" href="#contato">Ver pacote</a>
                                 </div>
-
                             </article>
 
                             <article class="curso-card">
-
-                                <img
-                                    src="src/images/curso-excel.png"
-                                    alt="Curso de Excel Essencial e Avançado"
-                                    loading="lazy"
-                                >
-
+                                <img src="src/images/curso-excel.png" alt="Curso de Excel Essencial e Avançado" loading="lazy">
                                 <div class="curso-conteudo">
-
                                     <h3>Excel Essencial e Avançado</h3>
-
-                                    <p>
-                                        Desenvolva conhecimentos em
-                                        planilhas, fórmulas e recursos
-                                        avançados do Excel.
-                                    </p>
-
-                                    <a class="botao-principal" href="#contato">
-                                        Ver pacote
-                                    </a>
-
+                                    <p>Desenvolva conhecimentos em planilhas, fórmulas e recursos avançados do Excel.</p>
+                                    <a class="botao-principal" href="#contato">Ver pacote</a>
                                 </div>
-
                             </article>
-
                         </div>
 
                         <button
                             class="seta-cursos seta-proxima"
                             type="button"
                             aria-label="Ver próximos pacotes"
-                        >
-                            &#10095;
-                        </button>
-
+                        >&#10095;</button>
                     </div>
-
                 </div>
-
-                <!-- TODOS OS CURSOS -->
-
-                <div
-                    class="cursos-painel"
-                    id="todos-cursos"
-                    role="tabpanel"
-                    aria-labelledby="aba-todos"
-                    tabindex="0"
-                    hidden
-                >
-
-                    <div class="cursos-carrossel">
-
-                        <button
-                            class="seta-cursos seta-anterior"
-                            type="button"
-                            aria-label="Ver cursos anteriores"
-                        >
-                            &#10094;
-                        </button>
-
-                        <div class="cursos-lista">
-
-                            <article class="curso-card">
-
-                                <img
-                                    src="src/images/curso-hardware.png"
-                                    alt="Componentes de computador para montagem e manutenção"
-                                    loading="lazy"
-                                >
-
-                                <div class="curso-conteudo">
-
-                                    <h3>T.I. em Hardware</h3>
-
-                                    <p>
-                                        Aprenda sobre componentes,
-                                        montagem, manutenção e diagnóstico
-                                        de computadores.
-                                    </p>
-
-                                    <a class="botao-principal" href="#contato">
-                                        Saiba mais
-                                    </a>
-
-                                </div>
-
-                            </article>
-
-                            <article class="curso-card">
-
-                                <img
-                                    src="src/images/curso-excel.png"
-                                    alt="Curso de Excel Essencial e Avançado"
-                                    loading="lazy"
-                                >
-
-                                <div class="curso-conteudo">
-
-                                    <h3>Excel Essencial e Avançado</h3>
-
-                                    <p>
-                                        Desenvolva habilidades com
-                                        planilhas, fórmulas, funções
-                                        e organização de dados.
-                                    </p>
-
-                                    <a class="botao-principal" href="#contato">
-                                        Saiba mais
-                                    </a>
-
-                                </div>
-
-                            </article>
-
-                            <article class="curso-card">
-
-                                <img
-                                    src="src/images/curso-power-bi.png"
-                                    alt="Curso de Power BI e análise de dados"
-                                    loading="lazy"
-                                >
-
-                                <div class="curso-conteudo">
-
-                                    <h3>Power BI</h3>
-
-                                    <p>
-                                        Aprenda a organizar dados e criar
-                                        relatórios e painéis visuais.
-                                    </p>
-
-                                    <a class="botao-principal" href="#contato">
-                                        Saiba mais
-                                    </a>
-
-                                </div>
-
-                            </article>
-
-                            <article class="curso-card">
-
-                                <div class="curso-imagem-placeholder">
-                                    Pacote Office
-                                </div>
-
-                                <div class="curso-conteudo">
-
-                                    <h3>Pacote Office Completo</h3>
-
-                                    <p>
-                                        Domine as principais ferramentas
-                                        do pacote Office para o dia a dia
-                                        profissional.
-                                    </p>
-
-                                    <a class="botao-principal" href="#contato">
-                                        Ver pacote
-                                    </a>
-
-                                </div>
-
-                            </article>
-
-                            <article class="curso-card">
-
-                                <div class="curso-imagem-placeholder">
-                                    Design Gráfico
-                                </div>
-
-                                <div class="curso-conteudo">
-
-                                    <h3>Pacote de Design Gráfico</h3>
-
-                                    <p>
-                                        Aprenda a criar artes digitais,
-                                        logotipos e materiais visuais
-                                        utilizando ferramentas de design.
-                                    </p>
-
-                                    <a class="botao-principal" href="#contato">
-                                        Ver pacote
-                                    </a>
-
-                                </div>
-
-                            </article>
-
-                            <article class="curso-card">
-
-                                <img
-                                    src="src/images/curso-excel.png"
-                                    alt="Curso de Excel Essencial e Avançado"
-                                    loading="lazy"
-                                >
-
-                                <div class="curso-conteudo">
-
-                                    <h3>Excel Essencial e Avançado</h3>
-
-                                    <p>
-                                        Desenvolva conhecimentos em
-                                        planilhas, fórmulas e recursos
-                                        avançados do Excel.
-                                    </p>
-
-                                    <a class="botao-principal" href="#contato">
-                                        Ver pacote
-                                    </a>
-
-                                </div>
-
-                            </article>
-
-                        </div>
-
-                        <button
-                            class="seta-cursos seta-proxima"
-                            type="button"
-                            aria-label="Ver próximos cursos"
-                        >
-                            &#10095;
-                        </button>
-
-                    </div>
-
-                </div>
-
             </div>
 
-            <!-- CHAMADA FINAL DOS CURSOS -->
-
             <div class="cursos-chamada">
-
                 <div>
                     <small>SEU PRÓXIMO PASSO</small>
-
-                    <h3>
-                        O seu futuro digital começa agora!
-                    </h3>
+                    <h3>O seu futuro digital começa agora!</h3>
                 </div>
 
                 <p>
@@ -734,27 +353,15 @@ $imagemFachada = "src/images/compuway-fachada.png";
                     e prepare-se para novas oportunidades.
                 </p>
 
-                <button
-                    class="botao-todos-cursos"
-                    id="botao-todos-cursos"
-                    type="button"
-                >
+                <button type="button" class="botao-principal">
                     Ver todos os cursos
-                    <span aria-hidden="true">→</span>
                 </button>
-
             </div>
-
         </section>
 
-        <!-- CONTATO -->
-
         <section class="contato" id="contato">
-
             <div class="contato-container">
-
                 <div class="contato-informacoes">
-
                     <h2>Entre em contato</h2>
 
                     <p>
@@ -770,54 +377,35 @@ $imagemFachada = "src/images/compuway-fachada.png";
                     </p>
 
                     <div class="contato-dados">
-
                         <div class="contato-item">
-
                             <div class="icone" aria-hidden="true">☎</div>
-
                             <div>
                                 <h4>Telefone</h4>
                                 <p>(34) 3333-0000</p>
                             </div>
-
                         </div>
 
                         <div class="contato-item">
-
                             <div class="icone" aria-hidden="true">@</div>
-
                             <div>
                                 <h4>E-mail</h4>
-
                                 <a href="mailto:contato@compuwayvarjaodeminas.com.br">
                                     contato@compuwayvarjaodeminas.com.br
                                 </a>
                             </div>
-
                         </div>
 
                         <div class="contato-item">
-
                             <div class="icone" aria-hidden="true">⌖</div>
-
                             <div>
                                 <h4>Endereço</h4>
-
-                                <p>
-                                    Av. Jovino Mariano Gomes, 1100
-                                </p>
+                                <p>Av. Jovino Mariano Gomes, 1100</p>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
-                <!-- FORMULÁRIO -->
-
                 <div class="contato-formulario">
-
                     <h3>Envie sua mensagem</h3>
 
                     <p>
@@ -826,10 +414,8 @@ $imagemFachada = "src/images/compuway-fachada.png";
                     </p>
 
                     <form action="#" method="post">
-
                         <div>
                             <label for="nome">Nome completo</label>
-
                             <input
                                 type="text"
                                 id="nome"
@@ -841,7 +427,6 @@ $imagemFachada = "src/images/compuway-fachada.png";
 
                         <div>
                             <label for="email">E-mail</label>
-
                             <input
                                 type="email"
                                 id="email"
@@ -853,7 +438,6 @@ $imagemFachada = "src/images/compuway-fachada.png";
 
                         <div>
                             <label for="telefone">Telefone</label>
-
                             <input
                                 type="tel"
                                 id="telefone"
@@ -864,7 +448,6 @@ $imagemFachada = "src/images/compuway-fachada.png";
 
                         <div>
                             <label for="assunto">Assunto</label>
-
                             <select id="assunto" name="assunto" required>
                                 <option value="">Selecione um assunto</option>
                                 <option value="cursos">Informações sobre cursos</option>
@@ -875,7 +458,6 @@ $imagemFachada = "src/images/compuway-fachada.png";
 
                         <div>
                             <label for="mensagem">Mensagem</label>
-
                             <textarea
                                 id="mensagem"
                                 name="mensagem"
@@ -887,17 +469,11 @@ $imagemFachada = "src/images/compuway-fachada.png";
                         <button class="botao-principal" type="submit">
                             Enviar mensagem
                         </button>
-
                     </form>
-
                 </div>
-
             </div>
 
-            <!-- LOCALIZAÇÃO -->
-
             <div class="contato-localizacao">
-
                 <h3>Onde estamos</h3>
 
                 <iframe
@@ -906,27 +482,19 @@ $imagemFachada = "src/images/compuway-fachada.png";
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
                 ></iframe>
-
             </div>
-
         </section>
 
     </main>
 
-    <!-- RODAPÉ -->
-
     <footer class="rodape">
-
         <div class="rodape-container">
-
             <a href="#inicio" aria-label="Voltar ao início">
-
                 <img
                     src="<?= $imagemLogo ?>"
                     alt="Logo Compuway"
                     loading="lazy"
                 >
-
             </a>
 
             <nav aria-label="Links do rodapé">
@@ -937,19 +505,12 @@ $imagemFachada = "src/images/compuway-fachada.png";
             </nav>
 
             <div class="rodape-redes">
-
-                <a href="#contato" aria-label="Entre em contato">
-                    Contato ↗
-                </a>
-
+                <a href="#contato" aria-label="Entre em contato">Contato ↗</a>
             </div>
-
         </div>
 
         <div class="rodape-final">
-
             <div>
-
                 <p>
                     © <?= date("Y") ?> Compuway. Todos os direitos reservados.
                 </p>
@@ -957,14 +518,10 @@ $imagemFachada = "src/images/compuway-fachada.png";
                 <p>
                     Educação e tecnologia para o futuro.
                 </p>
-
             </div>
-
         </div>
-
     </footer>
 
-    <script src="js/cursos.js" defer></script>
-
+    <script src="system/js/cursos.js" defer></script>
 </body>
 </html>

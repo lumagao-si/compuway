@@ -1,112 +1,77 @@
+
 document.addEventListener("DOMContentLoaded", () => {
-    const abasCursos = Array.from(
-        document.querySelectorAll('.cursos-abas [role="tab"]')
-    );
 
-    const paineisCursos = Array.from(
-        document.querySelectorAll('.cursos-painel[role="tabpanel"]')
-    );
+    // ABAS DE CURSOS
 
-    const botaoTodos = document.querySelector("#botao-todos-cursos");
+    const abas = document.querySelectorAll(".cursos-abas button");
+    const paineis = document.querySelectorAll(".cursos-painel");
 
-    function selecionarAba(aba) {
-        const idPainel = aba.getAttribute("aria-controls");
-        const painelSelecionado = document.getElementById(idPainel);
-
-        if (!painelSelecionado) {
-            return;
-        }
-
-        abasCursos.forEach((item) => {
-            const selecionada = item === aba;
-
-            item.classList.toggle("ativo", selecionada);
-            item.setAttribute("aria-selected", String(selecionada));
-            item.setAttribute("tabindex", selecionada ? "0" : "-1");
-        });
-
-        paineisCursos.forEach((painel) => {
-            painel.hidden = painel !== painelSelecionado;
-        });
-
-        const lista = painelSelecionado.querySelector(".cursos-lista");
-
-        if (lista) {
-            lista.scrollTo({
-                left: 0,
-                behavior: "smooth"
-            });
-        }
-    }
-
-    abasCursos.forEach((aba, indice) => {
+    abas.forEach((aba) => {
         aba.addEventListener("click", () => {
-            selecionarAba(aba);
-        });
 
-        aba.addEventListener("keydown", (evento) => {
-            let proximoIndice = indice;
+            abas.forEach((item) => {
+                item.classList.remove("ativo");
+                item.setAttribute("aria-selected", "false");
+                item.setAttribute("tabindex", "-1");
+            });
 
-            if (evento.key === "ArrowRight") {
-                proximoIndice = (indice + 1) % abasCursos.length;
-            } else if (evento.key === "ArrowLeft") {
-                proximoIndice = (indice - 1 + abasCursos.length) % abasCursos.length;
-            } else if (evento.key === "Home") {
-                proximoIndice = 0;
-            } else if (evento.key === "End") {
-                proximoIndice = abasCursos.length - 1;
-            } else {
-                return;
+            paineis.forEach((painel) => {
+                painel.classList.remove("ativo");
+                painel.hidden = true;
+            });
+
+            aba.classList.add("ativo");
+            aba.setAttribute("aria-selected", "true");
+            aba.setAttribute("tabindex", "0");
+
+            const painelId = aba.getAttribute("aria-controls");
+            const painel = document.getElementById(painelId);
+
+            if (painel) {
+                painel.classList.add("ativo");
+                painel.hidden = false;
             }
-
-            evento.preventDefault();
-
-            abasCursos[proximoIndice].focus();
-            selecionarAba(abasCursos[proximoIndice]);
         });
     });
 
-    if (botaoTodos) {
-        botaoTodos.addEventListener("click", () => {
-            const abaTodos = document.querySelector("#aba-todos");
 
-            if (!abaTodos) {
-                return;
-            }
+    // CARROSSEL DE CURSOS E PACOTES
 
-            selecionarAba(abaTodos);
+    const carrosseis = document.querySelectorAll(".cursos-carrossel");
 
-            document.querySelector("#cursos").scrollIntoView({
-                behavior: "smooth"
-            });
+    carrosseis.forEach((carrossel) => {
 
-            abaTodos.focus({
-                preventScroll: true
-            });
-        });
-    }
+        const lista = carrossel.querySelector(".cursos-lista");
+        const anterior = carrossel.querySelector(".seta-anterior");
+        const proxima = carrossel.querySelector(".seta-proxima");
 
-    paineisCursos.forEach((painel) => {
-        const lista = painel.querySelector(".cursos-lista");
-        const anterior = painel.querySelector(".seta-anterior");
-        const proxima = painel.querySelector(".seta-proxima");
+        if (!lista || !anterior || !proxima) return;
 
-        if (!lista || !anterior || !proxima) {
-            return;
-        }
+        const calcularDeslocamento = () => {
+            const card = lista.querySelector(".curso-card");
+
+            if (!card) return 0;
+
+            const estilo = window.getComputedStyle(lista);
+            const espacamento = parseFloat(estilo.columnGap) || 0;
+
+            return card.getBoundingClientRect().width + espacamento;
+        };
 
         anterior.addEventListener("click", () => {
             lista.scrollBy({
-                left: -lista.clientWidth,
+                left: -calcularDeslocamento(),
                 behavior: "smooth"
             });
         });
 
         proxima.addEventListener("click", () => {
             lista.scrollBy({
-                left: lista.clientWidth,
+                left: calcularDeslocamento(),
                 behavior: "smooth"
             });
         });
+
     });
+
 });
