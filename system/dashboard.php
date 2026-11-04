@@ -9,7 +9,7 @@
     <link rel="stylesheet" href = "system.css">
     <link rel="stylesheet" href = "dashboard.css"> 
     <link rel="icon" href="https://baetafilhoadvogados.com.br/wp-content/uploads/2022/09/1-8.png" type="image/svg+xml">
-    <link rel="stylesheet" href="./../components/sidebar.css">
+    <link rel="stylesheet" href="../components/sidebar.css">
     <title>Dashboard</title>
 </head>
 <body>

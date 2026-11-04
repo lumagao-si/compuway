@@ -1,0 +1,252 @@
+.title {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.acoes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+}
+
+.busca-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 350px; 
+    height: 50px; 
+    border: 1px solid #4e4d4e;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.busca-container i {
+    padding: 10px 5px 10px 15px;
+}
+
+.busca {
+    min-width: 0; 
+    height: 100%;
+    background-color: #1e1731; 
+    color: #ffffff; 
+    border-radius: 10px 0 0 10px;
+    border: none;
+    flex: 1;
+}
+
+
+.pesquisar {
+    width: 60px;
+    height: 50px;
+    background-color: #1e1731;
+    border-radius: 0 10px 10px 0;
+    border: none;
+    flex-shrink: 0; /*impede o botão de ser espremido*/
+}
+
+.busca-container .bi-search {
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+
+.filter {
+    height: 50px;
+    border-radius: 10px;
+    background-color: #1e1732;
+    color: #ffffff;
+    gap: 5px;
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.filter option {
+    background-color: #232b45;
+    color: #fff;
+}
+
+.filter option:hover {
+    background-color: #4a2a8a;
+}
+
+.cadastrar-cursos {
+    flex-shrink: 0;
+}
+
+.modal-content{
+    background-color:#1e1731 !important;
+    color: #ffffff;
+}
+
+.modal-content .form-select {
+    background-color: #1f1d24;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+    color: #ffffff;
+}
+
+.modal-content .form-select:invalid {
+    color: #8a90a2;
+}
+
+.modal-content .form-control, .modal-content .form-select {
+    width: 500px;
+}
+
+.modal-content input, .modal-content textarea {
+    background-color: #1f1d24 !important;
+    color: #ffffff !important;
+}
+
+.modal-content .form-control::placeholder{
+    color: #8a90a2;
+}
+
+
+.cadastrarCurso {
+    background-color: #F58634;
+    color: #000000;
+    border-color: #F58634;
+}
+
+.cadastrarCurso:hover {
+    background-color: #F58634;
+}
+
+.fechar {
+    color: #000000;
+}
+
+.modal-content .btn-close {
+    filter: invert(1); /*faz o x ficar claro*/
+}
+
+.container_cursos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 1100px;
+    height: 440px;
+    gap: 10px;
+    padding: 0 0 15px 0;
+    margin: 0 auto;
+}
+
+.table_cursos {
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #424242;
+    overflow: hidden;
+}
+
+.table {
+    margin-bottom: 0;
+    height: 100%;
+}
+
+.table-dark .thead-cursos th{
+    background-color: #383541;
+}
+
+.table tbody td {
+    padding: 5px 0 5px 0;
+    height: 45px;
+}
+
+/* Tira a borda da última linha da tabela */
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.badge-curso{
+    background-color: #240675;
+} 
+
+.badge-pacote{
+    background-color: #5c1c91;
+}
+
+.sem-resultados {
+    text-align: center;
+    color: #8a90a2;
+    padding: 24px 0;
+}
+
+.registros {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: auto;
+}
+
+p {
+    flex: 1;
+    margin-left: 10px;
+    color: #ffffff;
+}
+
+.modal {
+    --bs-modal-width: 540px;
+}
+
+.btn-acoes {
+    background: none;
+    border: 0;
+    color: #fff;
+    font-size: 18px;
+    padding: 4px 8px 4px 8px;
+    border-radius: 6px;
+}
+
+/*remove a setinha que vem no dropdown*/
+.btn-acoes.dropdown-toggle::after {
+    display: none;
+}
+
+.btn-acoes:hover, .btn-acoes:focus-visible, .btn-acoes.show { /* .show = quando o menu está aberto */
+    background: #232b45;
+    color: #fff;
+}
+
+.dropdown-menu {
+    --bs-dropdown-bg: #1e1731;                 /* fundo do menu */
+    --bs-dropdown-color: #e8eaf2;
+    --bs-dropdown-border-color: #3a4468;       /* borda */
+    --bs-dropdown-border-radius: 10px;
+    --bs-dropdown-padding-y: 6px;
+    --bs-dropdown-min-width: 9rem;
+    --bs-dropdown-font-size: 14px;
+    --bs-dropdown-link-color: #e8eaf2;         /* texto das opções */
+    --bs-dropdown-link-hover-color: #fff;
+    --bs-dropdown-link-hover-bg: #4a2a8a;      /* roxo ao passar o mouse */
+    --bs-dropdown-link-active-color: #1a1206;
+    --bs-dropdown-link-active-bg: #f58634;    
+}
+
+/* 3) Células da tabela alinhadas ao meio, para o botão não ficar torto */
+.table_cursos td {
+    vertical-align: middle;
+}
+
+.pagination {
+    margin-right: 10px;
+    border-color: #4e4d4e;
+  --bs-pagination-color: #ffffff;
+  --bs-pagination-hover-color: #6d6d6d;
+  --bs-pagination-hover-bg: #d4cece;
+  --bs-pagination-hover-border-color: #dee2e6;
+  --bs-pagination-active-color: #ffffff;
+  --bs-pagination-active-bg: #F58634;
+  --bs-pagination-active-border-color: #ffffff;
+  --bs-pagination-bg: #1f1d24;
+  --bs-pagination-disabled-color: #888383;
+  --bs-pagination-disabled-bg: #1f1d24
+}
+
