@@ -1,0 +1,37 @@
+COMPUWAY - VERSAO INTEGRADA PARA TESTES
+
+1. INSTALACAO
+- Faça uma cópia de segurança da pasta antiga antes de substituir qualquer arquivo.
+- Copie a pasta compuway para C:\xampp\htdocs\.
+- Inicie Apache e MySQL no XAMPP.
+- Abra http://localhost/compuway/site.php
+
+2. BANCO DE DADOS (IMPORTANTE)
+- O backend/conexao.php utiliza banco compuway, usuário root e senha vazia.
+- Antes de qualquer mudança, exporte um backup pelo phpMyAdmin.
+- NÃO importe compuway_estrutura_referencia.sql por cima do banco atual: ele contém dados de exemplo.
+- Para adicionar os campos usados pelo formulário de cursos, abra phpMyAdmin, selecione o banco compuway, vá em Importar e execute database/atualizar_banco.sql. Faça isso UMA ÚNICA VEZ.
+- A migração apenas adiciona a coluna parcelas nas tabelas cursos e pacotes; não apaga os dados existentes.
+
+3. TESTES JÁ PREPARADOS
+- Login: o campo frontend usuario recebe o e-mail cadastrado em administradores.
+- Dashboard: consulta alunos ativos, mensalidades a receber, pagamentos recebidos e mensalidades atrasadas no banco.
+- Cursos: lista, cadastra e edita cursos individuais e pacotes usando a própria tela system/cursos.php.
+- Em pacotes, os nomes digitados manualmente são guardados no campo descricao, conforme combinado.
+- O tipo de registro não pode ser trocado durante a edição, para evitar confundir IDs de tabelas diferentes.
+- A saída encerra a sessão e retorna ao login.
+
+4. O QUE AINDA AGUARDA A TELA FINAL
+- Alunos e Mensalidades continuam como páginas provisórias porque as telas completas do frontend ainda não foram entregues.
+- Assim que essas telas chegarem, vamos conectar seus campos e ações aos cadastros, matrículas e pagamentos já existentes no backend/banco, evitando criar vários arquivos novos.
+
+5. ORGANIZACAO
+- system/: telas administrativas.
+- components/: componentes compartilhados do frontend.
+- backend/conexao.php: conexão com MySQL.
+- backend/financeiro.php: cálculo e resumo financeiro utilizado pelo dashboard e poderá ser reutilizado na tela de mensalidades.
+- backend/originais/: cópias preservadas dos arquivos originais enviados pelo colega, sem reescrita.
+- database/atualizar_banco.sql: pequena migração necessária para o formulário de cursos.
+
+Os trechos de integração novos ou adaptados estão identificados com comentários "Aqui ocorre a integração".
+Esta versão ainda precisa de testes no navegador e no banco. A verificação de sintaxe não substitui o teste funcional.
