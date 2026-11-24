@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
 
     // ABAS DE CURSOS
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-
 
     // CARROSSEL DE CURSOS E PACOTES
 
