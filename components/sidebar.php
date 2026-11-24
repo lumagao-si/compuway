@@ -7,6 +7,6 @@
             <a href="alunos.php" class="option <?php echo $pagina_atual=="alunos.php" ? "active" : ""; ?>"> <i class="bi bi-people me-2"></i>Alunos</a>
             <a href="mensalidades.php" class="option <?php echo $pagina_atual=="mensalidades.php" ? "active" : ""; ?>"> <i class="bi bi-currency-dollar me-2"></i> Mensalidades</a>
             <a href="cursos.php" class="option <?php echo $pagina_atual=="cursos.php" ? "active" : ""; ?>"> <i class="bi bi-book me-2"></i> Cursos</a>
-            <a href="sair.php" class="sair option  <?php echo $pagina_atual=="sair.php" ? "active" : ""; ?>"> <i class="bi bi-box-arrow-right me-2"></i> Sair</a>
+            <a href="../system/login.php" class="sair option  <?php echo $pagina_atual=="sair.php" ? "active" : ""; ?>"> <i class="bi bi-box-arrow-right me-2"></i> Sair</a>
         </div>
     </div>

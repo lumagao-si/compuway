@@ -1,0 +1,17 @@
+<?php
+require_once 'catalogo-dados.php';
+$tipo = ($_GET['tipo'] ?? '') === 'pacote' ? 'pacote' : 'curso';
+$slug = $_GET['slug'] ?? '';
+$item = null; $imagem = '';
+if($tipo==='curso') { foreach($catalogoCursos as $c) if(slugCatalogo($c[0])===$slug) { $item=$c; break; } }
+else { foreach($catalogoPacotes as $c) if(slugCatalogo($c[0])===$slug) { $item=$c; break; } }
+if(!$item) { http_response_code(404); $titulo='Conteúdo não encontrado'; $descricao='Não encontramos este curso ou pacote.'; $horas=''; $lista=[]; }
+else { $titulo=$item[0]; $horas=$item[1]??''; $descricao=$item[2]; $lista=$tipo==='curso'?explode(';',$item[3]):$item[3]; global $imagensCatalogo; $imagem=$imagensCatalogo[$titulo]??''; }
+?>
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title><?= htmlspecialchars($titulo) ?> | Compuway</title><link rel="stylesheet" href="components/site.css"><link rel="stylesheet" href="components/catalogo-extra.css"></head><body class="pagina-detalhe">
+<header class="catalogo-pagina-topo"><a class="catalogo-voltar" href="todos-cursos.php">← Voltar ao catálogo</a><a href="site.php"><img src="src/images/compuway.logo.png" alt="Compuway"></a></header>
+<main class="detalhe-container"><div class="detalhe-hero"><?php if($imagem && file_exists($imagem)): ?><img src="<?= htmlspecialchars($imagem) ?>" alt="<?= htmlspecialchars($titulo) ?>"><?php else: ?><div class="catalogo-foto-vazia detalhe-foto">Imagem de <?= $tipo==='pacote'?'destaque do pacote':'destaque do curso' ?></div><?php endif; ?><div class="detalhe-intro"><span class="cursos-etiqueta"><?= $tipo==='pacote'?'PACOTE DE CURSOS':'CURSO INDIVIDUAL' ?></span><h1><?= htmlspecialchars($titulo) ?></h1><?php if($horas): ?><p class="detalhe-horas">Carga horária: <?= htmlspecialchars($horas) ?></p><?php endif; ?><p><?= htmlspecialchars($descricao) ?></p></div></div>
+<section class="detalhe-bloco"><h2><?= $tipo==='pacote'?'Formação que reúne diferentes habilidades':'Sobre o curso' ?></h2><p><?= htmlspecialchars($descricao) ?> <?= $tipo==='pacote'?'Os conteúdos são realizados um curso por vez, conforme a organização da formação.':'Ao longo das aulas, o aluno trabalha os fundamentos e pratica os recursos apresentados, construindo conhecimentos para situações cotidianas e profissionais.' ?></p></section>
+<section class="detalhe-bloco"><h2><?= $tipo==='pacote'?'Cursos que compõem o pacote':'Conteúdo programático' ?></h2><ul class="detalhe-lista"><?php foreach($lista as $linha): ?><li><?= htmlspecialchars(trim($linha)) ?></li><?php endforeach; ?></ul></section>
+<section class="detalhe-bloco detalhe-aplicacao"><h2><?= $tipo==='pacote'?'O que esta formação reúne':'O que você poderá desenvolver' ?></h2><p><?= $tipo==='pacote'?'Uma sequência de conteúdos que permite ampliar conhecimentos em diferentes áreas relacionadas, construindo uma formação integrada.':'Conhecimentos, práticas e familiaridade com os recursos e temas trabalhados no curso, para aplicar em atividades pessoais, escolares ou profissionais conforme o conteúdo.' ?></p></section>
+<div class="detalhe-acoes"><a class="botao-principal" href="todos-cursos.php">Explorar outros cursos</a><a class="botao-secundario" href="site.php#cursos">Voltar ao site</a></div></main><footer class="catalogo-pagina-footer"><p>Compuway — Educação e tecnologia para o futuro.</p></footer></body></html>

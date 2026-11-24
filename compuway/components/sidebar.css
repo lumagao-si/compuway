@@ -1,0 +1,97 @@
+.sidebar {
+    width: 210px;
+    min-width: 210px;
+    height: 100vh;
+    background-image: url("../src/images/img.sidebar.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    overflow-y: auto; 
+    box-sizing: border-box;
+    flex-shrink: 0; /* Impede que a sidebar encolha quando o conteúdo principal for maior */
+}
+
+.sidebar-logo {
+    width: 160px;
+    height: 110px;
+}
+
+.sidebar .options{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 80%;
+    gap: 10px;
+    font-size: 16px;
+    flex: 1;  
+}
+
+.sidebar .option{
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    gap: 10px;
+    text-decoration: none;
+    padding: 10px 10px;
+}
+
+.sidebar .option i{
+    width: 20px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.sidebar .option.active{
+    
+    background-color: #F58634;
+    color: #141414;
+
+    border-radius: 5px;
+
+}
+
+.sidebar i.active{
+    color: #141414;
+}
+
+.sair {
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+/* Confirmação de saída da área administrativa */
+#modalSair .modal-content {
+    background-color: #1e1731;
+    color: #ffffff;
+    border: 1px solid #3a4468;
+    border-radius: 10px;
+}
+
+#modalSair .modal-header,
+#modalSair .modal-footer {
+    border-color: #3a4468;
+}
+
+#modalSair .modal-title {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+#modalSair .modal-body {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+#modalSair .btn-secondary {
+    border-radius: 5px;
+}
+
+/* Ajuste essencial para o botão de fechar (X) aparecer no fundo escuro */
+#modalSair .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
